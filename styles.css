@@ -1112,6 +1112,15 @@ footer {
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 
 @media (max-width: 768px) {
+
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+    
     .header__description {
         padding: 0 24px;        
     }
