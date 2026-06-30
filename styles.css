@@ -156,26 +156,38 @@ p {
 
 .nav__link--primary:hover {
     text-decoration: none;
-    background-color: rgb(88, 12, 195);
+    color: rgb(88, 12, 195);
 }
 
 .btn__menu {
     background-color: transparent;
-    font-size: 40px;
     text-align: center;
-    border: none;
     display: none;
-    color: green;
+    color: rgba(26, 32, 44);
+    width: 24px;
+    height: 60px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn__menu:hover {
+    color: rgba(100, 21, 255);
 }
 
 .menu__backdrop {
-    position: absolute;
-    background-color: #f56565;
+    position: fixed;
+    height: 378px;
+    background-color: #fff;
+    border: 1px solid rgba(229, 231, 235);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: 4;
+    margin: 24px 16px;
+    padding: 32px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,15 +210,32 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .menu__list {
-    padding: 32px 0;
+    margin: 10px 0;
+    padding-bottom: 4px;
 }
 
 .menu__link {
-    font-size: 40px;
-    color: green;
+    font-size: 18px;
+    color: rgba(26, 32, 44);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu__list:nth-child(6) {
+    padding-top: 18px;
+}
+
+.menu__link--primary {
+    background-color: rgba(100, 21, 255);
+    border-radius: 500px;
+    padding: 12px 32px;
+    border: medium;
+    color: rgba(247, 250, 252);
 }
 
 .btn__menu--close {
@@ -214,7 +243,13 @@ p {
     right: 20px;
     top: 10px;
     padding: 8px;
-    color: green;
+    color: rgba(26, 32, 44);
+    width: 24px;
+    height: 60px;
+}
+
+.btn__menu--close:hover {
+    color: rgba(26, 32, 44);
 }
 
 /* 
@@ -332,8 +367,11 @@ FEATURES
     font-weight: 500;
     color: rgba(124, 139, 161);
     max-width: 556px;
-    text-align: center;
     line-height: 1.6;
+}
+
+.para {
+    text-align: center;
 }
 
 
@@ -1122,7 +1160,10 @@ footer {
     }
     
     .header__description {
-        padding: 0 24px;        
+        padding: 0 24px;
+        display: flex;  
+        margin: 0 auto;
+        flex-direction: column;
     }
 
     h1 {
@@ -1281,4 +1322,116 @@ footer {
     .footer__social--link:first-child {
         margin-left: 0px;
     }
+}
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+
+@media (max-width: 550px) {
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+    .header__description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .features {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feature {
+        text-align: center;
+    }
+
+    .quality__description,
+    .steps__description,
+    .value__description,
+    .testimonials__description {
+        padding: 0;
+        margin-top: 64px;
+        text-align: center;
+    }
+
+    .quality__description,
+    .quality__img--wrapper,
+    .steps__description,
+    .steps__img--wrapper,
+    .value__description,
+    .value__img,
+    .testimonials__description,
+    .testimonial__img {
+        width: 100%;
+        max-width: 408px;
+    }
+
+    .steps__img--wrapper {
+        margin-bottom: 30px;
+    }
+
+    .steps__img {
+        width: 406px;
+        height: 232px;
+    }
+
+    .steps__grid {
+        width: 80px;
+    }
+
+    .testimonial__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonial__img {
+        width: 20%;
+        justify-content: center;
+    }
+
+    .testimonial__button {
+        margin-top: 20px;
+    }
+
+    .start__title {
+        width: 342px;
+        height: 72px;
+        margin-bottom: 50px;
+    }
+
+    .start__buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .start__button:nth-child(1) {
+        width: 198.4px;
+        height: 65.6px;
+    }
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    .footer__columns {
+        flex-wrap: nowrap;
+    }
+
 }
