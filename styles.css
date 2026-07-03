@@ -120,11 +120,12 @@ p {
     font-weight: 600;
     padding-top: 8px;
     align-items: center;
+    position: relative;
 }
 
-.nav__link:hover {
-    text-decoration: underline;
-    text-decoration-color: rgba(100, 21, 255);
+.nav__link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 .nav__link::after {
@@ -132,9 +133,13 @@ p {
     position: absolute;
     left: 0;
     bottom: -3px;
+    background-color: rgba(100, 21, 255);
     width: 100%;
     height: 2px;
     transform: scaleX(0);
+    display: block;
+    transition: all 300ms ease-in-out;
+    visibility: hidden;
 }
 
 .nav__link:hover::after {
@@ -450,9 +455,12 @@ QUALITY
 }
 
 .quality__img {
+    width: 100%;
     max-width: 576px;
     z-index: 1;
 }
+
+/*
 
 .quality__grid {
     transform: translateX(50%) translateY(50%) scaleX(1) scaleY(1);
@@ -460,6 +468,18 @@ QUALITY
     position: absolute;
     width: 80px;
     height: 80px;
+    right: 0px;
+    bottom: 0px;
+    fill: rgba(100, 21, 255);
+}
+
+*/
+
+.quality__grid {
+    transform: translateX(50%) translateY(50%) scaleX(1) scaleY(1);
+    width: 80px;
+    height: 80px;
+    position: absolute;
     right: 0px;
     bottom: 0px;
     fill: rgba(100, 21, 255);
@@ -787,7 +807,15 @@ PRICING
 
 .plan__button {
     padding: 12px 32px;
-    transition: transform 0.1s ease-in-out;
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.plan__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .plans__blob {
@@ -1058,13 +1086,23 @@ footer {
     position: relative;
 }
 
-.footer__column--link:hover {
-    text-decoration: underline;    
+.footer__column--link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
-.footer__column--link:after {
+.footer__column--link::after {
     content: "";
-    opacity: 0;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    display: block;
+    transition: all 300ms ease-in-out;
+    visibility: hidden;
 }
 
 .footer__divider {
@@ -1123,9 +1161,7 @@ footer {
     z-index: 2;
 }
 
-.footer__social--link:hover {
-    background-color: #d2d3d4;
-}
+
 
 .footer__blob--1 {
     position: absolute;
@@ -1160,7 +1196,7 @@ footer {
     .btn__menu {
         display: block;
     }
-    
+
     .header__description {
         padding: 0 24px;
         display: flex;  
