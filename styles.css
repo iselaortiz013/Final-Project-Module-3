@@ -1194,16 +1194,6 @@ footer {
         flex-direction: row;
     }
 
-    .nav__logo {
-        margin-right: auto;
-        align-items: center;
-    }
-
-    .btn__menu {
-        margin-left: auto;
-        align-items: center;
-    }
-
     .nav__links {
         display: none;
     }
@@ -1220,7 +1210,8 @@ footer {
         width: 100%;
     }
 
-    .row {
+
+    header.row {
         flex-direction: column;
     }
 
